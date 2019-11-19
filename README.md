@@ -18,3 +18,4 @@ Init based on https://www.reactboilerplate.com
 * Item page:
   * Description formatting
 * Images lazy loader
+* Disable submit button after click

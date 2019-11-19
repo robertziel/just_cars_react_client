@@ -6,7 +6,7 @@ export function fullUrl(path, params) {
   return `${BACKEND_API_URL}${path}${stringifyParams(params)}`;
 }
 
-function stringifyParams(params) {
+export function stringifyParams(params) {
   return params ? `?${queryString.stringify(params)}` : '';
 }
 
