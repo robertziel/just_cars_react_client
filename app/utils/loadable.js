@@ -1,7 +1,13 @@
 import React, { lazy, Suspense } from 'react';
+import LinearProgress from '@material-ui/core/LinearProgress';
 
-const loadable = (importFunc, { fallback = null } = { fallback: null }) => {
+const loadable = (
+  importFunc,
+  { customFallback = null } = { customFallback: null },
+) => {
   const LazyComponent = lazy(importFunc);
+
+  const fallback = customFallback || <LinearProgress />;
 
   return props => (
     <Suspense fallback={fallback}>
