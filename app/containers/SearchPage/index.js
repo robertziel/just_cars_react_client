@@ -8,7 +8,7 @@
 import React from 'react';
 import { FormattedMessage } from 'react-intl';
 
-import { Container, Grid } from '@material-ui/core';
+import { Container, Grid, Paper } from '@material-ui/core';
 
 import Search from './Search';
 
@@ -17,12 +17,18 @@ import messages from './messages';
 export default function SearchPage() {
   return (
     <Container>
-      <h1>
-        <FormattedMessage {...messages.header} />
-      </h1>
-      <Grid>hello</Grid>
-      <Grid>
-        <Search />
+      <Grid container spacing={3}>
+        <Grid item xs={12}>
+          <h1>
+            <FormattedMessage {...messages.header} />
+          </h1>
+        </Grid>
+        <Grid item xs={12} sm={8}>
+          <Paper>Gallery</Paper>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Search />
+        </Grid>
       </Grid>
     </Container>
   );

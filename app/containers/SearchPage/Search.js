@@ -2,11 +2,9 @@ import React, { Component } from 'react';
 
 import {
   Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
+  GridList,
+  GridListTile,
+  GridListTileBar,
 } from '@material-ui/core';
 
 import { apiGet } from 'utils/fetchers';
@@ -38,22 +36,14 @@ class Search extends Component {
   render() {
     return (
       <Paper>
-        <Table stickyHeader>
-          <TableHead>
-            <TableRow>
-              <TableCell width="200px">Title</TableCell>
-              <TableCell>Price</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {this.state.items.map(item => (
-              <TableRow hover key={item.id}>
-                <TableCell>{item.title}</TableCell>
-                <TableCell>{item.price}</TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
+        <GridList cellHeight={250} cols={1}>
+          {this.state.items.map(item => (
+            <GridListTile key={item.image}>
+              <img src={item.image} alt={item.title} />
+              <GridListTileBar title={item.title} subtitle={item.price} />
+            </GridListTile>
+          ))}
+        </GridList>
       </Paper>
     );
   }
