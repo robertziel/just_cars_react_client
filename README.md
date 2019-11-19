@@ -15,3 +15,5 @@ Init based on https://www.reactboilerplate.com
 ## To do
 
 * Set up tests
+* Item page:
+  * Description formatting

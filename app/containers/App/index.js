@@ -10,6 +10,7 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 
+import ItemPage from 'containers/ItemPage/Loadable';
 import SearchPage from 'containers/SearchPage/Loadable';
 import NotFoundPage from 'containers/NotFoundPage/Loadable';
 
@@ -20,6 +21,7 @@ export default function App() {
     <div>
       <Switch>
         <Route exact path="/" component={SearchPage} />
+        <Route exact path="/item/:id" component={ItemPage} />
         <Route component={NotFoundPage} />
       </Switch>
       <GlobalStyle />
