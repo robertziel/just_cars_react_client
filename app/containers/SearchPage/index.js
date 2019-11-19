@@ -13,18 +13,21 @@ import { Container, Grid } from '@material-ui/core';
 import Search from './Search';
 
 import messages from './messages';
+import Wrapper from './Wrapper';
 
 export default function SearchPage() {
   return (
-    <Container>
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <h1>
-            <FormattedMessage {...messages.header} />
-          </h1>
+    <Wrapper>
+      <Container>
+        <Grid container spacing={3}>
+          <Grid item xs={12}>
+            <h1>
+              <FormattedMessage {...messages.header} />
+            </h1>
+          </Grid>
         </Grid>
-      </Grid>
-      <Search />
-    </Container>
+        <Search />
+      </Container>
+    </Wrapper>
   );
 }
