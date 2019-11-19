@@ -17,3 +17,4 @@ Init based on https://www.reactboilerplate.com
 * Set up tests
 * Item page:
   * Description formatting
+* Images lazy loader

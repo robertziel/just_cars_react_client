@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 
 import {
-  Paper,
+  Grid,
   GridList,
   GridListTile,
   GridListTileBar,
+  Paper,
 } from '@material-ui/core';
 
 import { apiGet } from 'utils/fetchers';
+
+import Gallery from './Gallery';
 
 class Search extends Component {
   constructor(props) {
@@ -34,19 +37,28 @@ class Search extends Component {
   }
 
   render() {
+    const { items } = this.state;
+
     return (
-      <Paper>
-        <GridList cellHeight={250} cols={1}>
-          {this.state.items.map(item => (
-            <GridListTile key={item.image}>
-              <a href={`/item/${item.id}`}>
-                <img src={item.image.search} alt={item.title} />
-                <GridListTileBar title={item.title} subtitle={item.price} />
-              </a>
-            </GridListTile>
-          ))}
-        </GridList>
-      </Paper>
+      <Grid container spacing={3}>
+        <Grid item xs={12} sm={8}>
+          <Paper>{items.length ? <Gallery items={items} /> : ''}</Paper>
+        </Grid>
+        <Grid item xs={12} sm={4}>
+          <Paper>
+            <GridList cellHeight={250} cols={1}>
+              {items.map(item => (
+                <GridListTile key={item.id}>
+                  <a href={`/item/${item.id}`}>
+                    <img src={item.image.search} alt={item.title} />
+                    <GridListTileBar title={item.title} subtitle={item.price} />
+                  </a>
+                </GridListTile>
+              ))}
+            </GridList>
+          </Paper>
+        </Grid>
+      </Grid>
     );
   }
 }
