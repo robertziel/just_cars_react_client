@@ -18,9 +18,7 @@ export default function SearchPage() {
       <h1>
         <FormattedMessage {...messages.header} />
       </h1>
-      <Grid>
-        hello
-      </Grid>
+      <Grid>hello</Grid>
     </Container>
   );
 }
