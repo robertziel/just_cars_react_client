@@ -7,3 +7,7 @@ Run using npm
 npm run setup
 npm start
 ```
+
+## To do
+
+* Set up tests
